@@ -20,6 +20,10 @@ adminRouter.get('/users', function(req, res) {
   res.send('I show all the users!');
 });
 
+adminRouter.get('/users/:name', function(req, res) {
+  res.send('hello ' + req.params.name + '!');
+});
+
 adminRouter.get('/posts', function(req, res) {
   res.send('I show all the posts!');
 });
