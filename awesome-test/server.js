@@ -3,6 +3,11 @@ var express = require('express'),
     adminRouter = express.Router(),
     path = require('path');
 
+adminRouter.use(function(req, res, next) {
+  console.log(req.method, req.url);
+  next();
+});
+
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname + '/index.html'));
 });
