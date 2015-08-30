@@ -1,7 +1,10 @@
 var express = require('express'),
     app = express(),
     adminRouter = express.Router(),
-    path = require('path');
+    path = require('path'),
+    mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/db_name');
 
 app.route('/login')
   .get(function(req, res) {
