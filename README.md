@@ -1,3 +1,3 @@
 # meanMachine
 
-a MEAN stack app from the book Mean Machine
+a simple JS MEAN stack app from the ebook Mean Machine
