@@ -3,6 +3,15 @@ var express = require('express'),
     adminRouter = express.Router(),
     path = require('path');
 
+app.route('/login')
+  .get(function(req, res) {
+    res.send('this is the login form');
+  })
+  .post(function(req, res) {
+    console.log('processing');
+    res.send('processing the login form!');
+  });
+
 adminRouter.use(function(req, res, next) {
   console.log(req.method, req.url);
   next();
@@ -31,7 +40,7 @@ adminRouter.param('name', function(req, res, next, name) {
 });
 
 adminRouter.get('/users/:name', function(req, res) {
-  res.send('hello ' + req.params.name + '!');
+  res.send('hello ' + req.name + '!');
 });
 
 adminRouter.get('/posts', function(req, res) {
