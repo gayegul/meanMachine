@@ -21,7 +21,7 @@ adminRouter.get('/users', function(req, res) {
 });
 
 adminRouter.param('name', function(req, res, next, name) {
-  if(name !== 'fuck') {
+  if(name !== 'bad name') {
     req.name = name;
     next();
   } else {
