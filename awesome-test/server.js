@@ -20,6 +20,16 @@ adminRouter.get('/users', function(req, res) {
   res.send('I show all the users!');
 });
 
+adminRouter.param('name', function(req, res, next, name) {
+  if(name !== 'fuck') {
+    req.name = name;
+    next();
+  } else {
+    console.log('name validation failed with name = ' + name);
+    res.sendStatus(400);
+  }
+});
+
 adminRouter.get('/users/:name', function(req, res) {
   res.send('hello ' + req.params.name + '!');
 });
