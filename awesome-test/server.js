@@ -1,8 +1,8 @@
-var express = require('express'),
-    app = express(),
-    adminRouter = express.Router(),
-    path = require('path'),
-    mongoose = require('mongoose');
+var express = require('express');
+var app = express();
+var adminRouter = express.Router();
+var path = require('path');
+var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/db_name');
 
