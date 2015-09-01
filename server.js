@@ -4,6 +4,9 @@ var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var mongoose = require('mongoose');
 var port = process.env.PORT || 8080;
+var User = require('./app/models/user');
+
+mongoose.connect('mongodb://localhost/meandb');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
