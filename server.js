@@ -26,6 +26,11 @@ app.get('/', function(req, res) {
 
 var apiRouter = express.Router();
 
+apiRouter.use(function(req, res, next) {
+  console.log('Somebody just came to our app!');
+  next();
+});
+
 apiRouter.get('/', function(req, res) {
   res.json({message: 'horray! welcome to our api!'});
 });
